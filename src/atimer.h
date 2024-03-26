@@ -82,7 +82,7 @@ private:
 	ATimerUnit _unit = ATimerUnit::MS;
 };
 
-inline ATimer::TimerMS2(uint32_t time, bool isRunning, ATimerMode mode) {
+inline ATimer::ATimer(uint32_t time, bool isRunning, ATimerMode mode) {
 	setTime(time);
 	if (isRunning)
 		start();
