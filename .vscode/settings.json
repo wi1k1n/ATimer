@@ -1,5 +1,8 @@
 {
 	"files.associations": {
-		"*.yaml": "home-assistant"
+		"*.h": "cpp",
+		"*.pyp": "python",
+		"*.yaml": "home-assistant",
+		"utility": "cpp"
 	}
 }

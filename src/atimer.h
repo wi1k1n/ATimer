@@ -1,19 +1,9 @@
 /*
     Advanced software timer (based on millis()/micros())
     GitHub: https://github.com/wi1k1n/ATimer
-    // Возможности:
-    // - Режим таймера и периодичного выполнения
-    // - Подключение функции-обработчика
-    // - Сброс/запуск/перезапуск/остановка/пауза/продолжение отсчёта
-    // - Возможность форсировать переполнение таймера
-    // - Возврат оставшегося времени в мс, а также условных единицах 8 и 16 бит
-    // - Несколько функций получения текущего статуса таймера
-    // - Алгоритм держит стабильный период и не боится переполнения millis()
-    
     Ilia Mazlov <mazlov.i.a@gmail.com>, AlexGyver <alex@alexgyver.ru>
     MIT License
 */
-
 #ifndef ATIMER_H__
 #define ATIMER_H__
 
@@ -64,7 +54,7 @@ public:
 	// }
 
 private:
-	/// @brief Time since MCU started (accounts for the units: can be ms or us)
+	/// @brief Time since MCU started (getUnit() units: can be ms or us)
 	uint32_t getUptime() const;
 
 private:
