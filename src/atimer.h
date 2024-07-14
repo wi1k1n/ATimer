@@ -36,7 +36,7 @@ public:
 	void setUnit(ATimerUnit unit);
 	void setTime(uint32_t time);
 	
-	void start();
+	void start(bool triggerImmediately = false);
 	void restart();
 	void stop();
 	void resume();
@@ -92,10 +92,13 @@ inline void ATimer::setMode(ATimerMode mode) { _mode = mode; }
 inline void ATimer::setUnit(ATimerUnit unit) { _unit = unit; }
 inline void ATimer::setTime(uint32_t time) { _period = (time == 0) ? 1 : time; }
 
-inline void ATimer::start() {
+inline void ATimer::start(bool triggerImmediately) {
 	_isRunning = true;  
 	_timer = getUptime();
 	_buffer = 0;
+	if (triggerImmediately) {
+		_timer -= _period;
+	}
 }
 inline void ATimer::restart() { start(); }
 inline void ATimer::stop() {
